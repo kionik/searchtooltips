@@ -2,6 +2,7 @@
 
 namespace yk\core;
 
+use yk\models\SearchRequest;
 use yk\models\SearchResult;
 use yk\models\Tooltip;
 
@@ -65,13 +66,15 @@ class Application
     public function start()
     {
         if ($this->isAjax()) {
-            $locations = (new Tooltip($this->serviceUri, $this->geolocationDriverClassName))->getData($this->getAjaxData(), $this->requestHeaders);
+            $userRequest = $this->getAjaxData();
+            $locations = (new Tooltip($this->serviceUri, $this->geolocationDriverClassName))->getData($userRequest, $this->requestHeaders);
+            $request_id = (new SearchRequest())->add($userRequest);
             if (is_array($locations)) {
                 foreach ($locations as $location) {
-                    (new SearchResult())->add($location);
+                    (new SearchResult())->add($request_id, $location);
                 }
             } else {
-                (new SearchResult())->add($locations);
+                (new SearchResult())->add($request_id, $locations);
             }
             echo json_encode($locations);
             

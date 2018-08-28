@@ -8,6 +8,10 @@ namespace yk\core;
  * Class DB
  * @package yk\core
  */
+/**
+ * Class DB
+ * @package yk\core
+ */
 class DB
 {
     /**
@@ -51,6 +55,14 @@ class DB
     {
         $statement = $this->pdo->prepare($sql);
         return $statement->execute();
+    }
+
+    /**
+     * @return string
+     */
+    public function getLastInsertId()
+    {
+        return $this->pdo->lastInsertId();
     }
 
     /**

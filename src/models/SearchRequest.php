@@ -4,20 +4,19 @@ namespace yk\models;
 use yk\core\DB;
 
 /**
- * Class SearchResult
+ * Class SearchRequest
  * @package yk\models
  */
-class SearchResult
+class SearchRequest
 {
     /**
-     * @param $request_id
-     * @param string $location
+     * @param string $request
      * @return int
      * @throws \Exception
      */
-    public function add(int $request_id, string $location)
+    public function add(string $request)
     {
-        $sql = "INSERT INTO search_results (request_id, name) VALUES ({$request_id}, '{$location}')";
+        $sql = "INSERT INTO search_requests (name) VALUES ('{$request}')";
         if(DB::getInstance()->execute($sql)) {
             return DB::getInstance()->getLastInsertId();
         }
