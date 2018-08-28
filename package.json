@@ -1,0 +1,26 @@
+{
+  "name": "searchtooltips",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack -p"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "*",
+    "webpack-cli": "*",
+    "vue": "*",
+    "vue-loader": "*",
+    "babel-core": "*",
+    "babel-loader": "*",
+    "babel-plugin-transform-runtime": "*",
+    "babel-preset-es2015": "*",
+    "css-loader": "*",
+    "vue-html-loader": "*",
+    "vue-style-loader": "*"
+  },
+  "dependencies": {}
+}

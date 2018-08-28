@@ -1,0 +1,22 @@
+input {
+    margin: 0px;
+    padding: 0px;
+}
+
+.search {
+    width: 400px;
+}
+
+#search_results{
+    z-index:999;
+    position: absolute;
+    width: 400px;
+}
+
+#search_results .search_result_variant{
+    cursor: pointer;
+    text-align: left;
+}
+#search_results .search_result_variant:hover{
+    background-color:#dadada;
+}

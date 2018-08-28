@@ -1,0 +1,13 @@
+{
+    "serviceUri": "https://geocode-maps.yandex.ru/1.x/?format=json&geocode=",
+    "geolocationDriverClassName": "YandexTooltip",
+    "templateDirectoryPath": "/templates/default",
+    "requestHeaders": [
+        "Content-Type: application/json"
+    ],
+    "dbConnection": {
+        "dsn": "mysql:host=127.0.0.1;dbname=cr63754_db;charset=utf8",
+        "login": "cr63754_db",
+        "password": "XppyHLT4"
+    }
+}

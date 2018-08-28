@@ -1,0 +1,9 @@
+{
+    "name": "searchtooltips",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "yk\\": "src"
+        }
+    }
+}
